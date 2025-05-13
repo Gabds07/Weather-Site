@@ -1,4 +1,4 @@
-import getWeatherData from "./controllers/weatherController";
+import getWeatherData from "./api/weatherApi";
 import IconsController from "./controllers/iconsController";
 
 async function displayWeather() {
