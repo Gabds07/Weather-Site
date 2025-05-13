@@ -1,4 +1,5 @@
 import getWeatherData from "./controllers/weatherController";
+import IconsController from "./controllers/iconsController";
 
 async function displayWeather() {
     const displayWeather = document.querySelector('.weather-display') as Element;
@@ -7,7 +8,9 @@ async function displayWeather() {
 
     submitButton.addEventListener('click', async (e) => {
         e.preventDefault();
-        displayWeather.innerHTML = await getWeatherData(city.value);
+        const weatherData = await getWeatherData(city.value);
+        displayWeather.innerHTML = weatherData;
+        IconsController(weatherData);
     });
 }
 
