@@ -1,17 +1,22 @@
 import getWeatherData from "./api/weatherApi";
 import IconsController from "./controllers/iconsController";
+import getLocationData from "./api/locationApi.ts";
 
 async function displayWeather() {
     const displayWeather = document.querySelector('.weather-display') as Element;
     const submitButton = document.querySelector('.submit-location') as Element;
     const city = document.querySelector('.input-location') as HTMLInputElement;
+    const displayCity = document.querySelector('.display-city') as HTMLElement;
 
     submitButton.addEventListener('click', async (e) => {
         e.preventDefault();
-        const weatherData = await getWeatherData(city.value);
+        displayCity.innerHTML = await getLocationData();
+        const weatherData = await getWeatherData(await getLocationData());
         displayWeather.innerHTML = weatherData;
         IconsController(weatherData);
+        displayCity.classList.add('show-city');
+        city.value = '';
     });
 }
 
-displayWeather();
+await displayWeather();

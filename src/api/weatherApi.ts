@@ -1,4 +1,5 @@
 async function getWeatherData(city: string) {
+    // @ts-ignore
     const apiKey = import.meta.env.VITE_API_KEY_WEATHER;
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
     const displayWeather = document.querySelector('.weather-display') as Element;
@@ -19,8 +20,8 @@ async function getWeatherData(city: string) {
         return response;
     } catch (err) {
         console.log(err);
-        displayWeather.classList.add('error')
-        return 'Error: the location was not found.'
+        displayWeather.classList.add('error');
+        return 'Error: the location was not found.';
     }
 }
 
