@@ -10,10 +10,14 @@ async function displayWeather() {
 
     submitButton.addEventListener('click', async (e) => {
         e.preventDefault();
+
         displayCity.innerHTML = await getLocationData();
         const weatherData = await getWeatherData(await getLocationData());
+
         displayWeather.innerHTML = weatherData;
+
         IconsController(weatherData);
+
         displayCity.classList.add('show-city');
         city.value = '';
     });
