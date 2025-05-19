@@ -4,10 +4,6 @@ async function getWeatherData(city: string) {
     const displayWeather = document.querySelector('.weather-display') as Element;
 
     try {
-        if (city === '') {
-            displayWeather.classList.add('error');
-            return "Error: Type a location.";
-        }
         const response = await fetch(weatherURL)
             .then(response => response.json())
             .then(current => {

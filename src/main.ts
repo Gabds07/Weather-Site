@@ -1,5 +1,5 @@
 import getWeatherData from "./api/weatherApi";
-import IconsController from "./controllers/iconsController";
+import IconsController from "./controllers/IconsController.ts";
 import getLocationData from "./api/locationApi.ts";
 
 async function displayWeather() {
