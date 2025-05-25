@@ -2,7 +2,7 @@ import getWeatherData from "./api/weatherApi";
 import IconsController from "./controllers/IconsController.ts";
 import getLocationData from "./api/locationApi.ts";
 
-async function displayWeather() {
+function displayWeather() {
     const displayWeather = document.querySelector('.weather-display') as Element;
     const submitButton = document.querySelector('.submit-location') as Element;
     const city = document.querySelector('.input-location') as HTMLInputElement;
@@ -27,5 +27,4 @@ async function displayWeather() {
         city.value = '';
     });
 }
-
-await displayWeather();
+displayWeather();
