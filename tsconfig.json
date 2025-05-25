@@ -25,7 +25,7 @@
     },
     "include": [
         "src",
-        "import.meta.env",
-        "vite-env.d.ts"
+        "vite-env.d.ts",
+        "import.meta.env"
     ]
 }
