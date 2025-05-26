@@ -1,6 +1,6 @@
 import findLatAndLon from "../controllers/LatAndLonController.ts";
 
-const displayWeather = document.querySelector('.weather-display') as Element;
+const displayWeather = $('.weather-display');
 
 async function getLocationData() {
     try {
@@ -13,7 +13,7 @@ async function getLocationData() {
         return response;
     } catch (err) {
         console.log(err);
-        displayWeather.classList.add('error');
+        displayWeather.addClass('error');
         return 'Error: the location was not found.';
     }
 }

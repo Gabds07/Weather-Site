@@ -1,19 +1,23 @@
 function IconsController(weatherData: string) {
-    const clearIcon = document.querySelector('.icon-clear') as HTMLElement;
-    const fewClouds = document.querySelector('.icon-few-clouds') as HTMLElement;
-    const cloudsIcon = document.querySelector('.icon-scattered-clouds') as HTMLElement;
-    const showerRainIcon = document.querySelector('.icon-shower-rain') as HTMLElement;
-    const rainIcon = document.querySelector('.icon-rain') as HTMLElement;
-    const thunderStormIcon = document.querySelector('.icon-thunderstorm') as HTMLElement;
+    const clearIcon = $('.icon-clear') as JQuery;
+    const fewClouds = $('.icon-few-clouds') as JQuery;
+    const cloudsIcon = $('.icon-scattered-clouds') as JQuery;
+    const showerRainIcon = $('.icon-shower-rain') as JQuery;
+    const rainIcon = $('.icon-rain') as JQuery;
+    const thunderStormIcon = $('.icon-thunderstorm') as JQuery;
 
-    clearIcon.classList.toggle('show', weatherData.includes('clear', 0));
-    fewClouds.classList.toggle('show', weatherData.includes('few clouds', 0));
-    cloudsIcon.classList.toggle('show', weatherData.includes('overcast clouds', 0)
-        || weatherData.includes('scattered clouds', 0)
-        || weatherData.includes('broken', 0));
-    showerRainIcon.classList.toggle('show', weatherData.includes('shower', 0));
-    rainIcon.classList.toggle('show', weatherData.includes('rain', 0));
-    thunderStormIcon.classList.toggle('show', weatherData.includes('thunderstorm', 0));
+    weatherData.includes('clear', 0) ? clearIcon.addClass('show') : clearIcon.removeClass('show');
+
+    weatherData.includes('few clouds', 0) ? fewClouds.addClass('show') : fewClouds.removeClass('show');
+    weatherData.includes('overcast clouds', 0) ? cloudsIcon.addClass('show') :
+        weatherData.includes('scattered clouds', 0) ? cloudsIcon.addClass('show') :
+        weatherData.includes('broken', 0) ? cloudsIcon.addClass('show') : clearIcon.removeClass('show');
+
+    weatherData.includes('shower', 0) ? showerRainIcon.addClass('show') : showerRainIcon.removeClass('show');
+
+    weatherData.includes('rain', 0) ? rainIcon.addClass('show') : rainIcon.removeClass('show');
+
+    weatherData.includes('thunderstorm', 0) ? thunderStormIcon.addClass('show') : thunderStormIcon.removeClass('show');
 }
 
 export default IconsController;
