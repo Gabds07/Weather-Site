@@ -11,7 +11,7 @@ function IconsController(weatherData: string) {
     weatherData.includes('few clouds', 0) ? fewClouds.addClass('show') : fewClouds.removeClass('show');
     weatherData.includes('overcast clouds', 0) ? cloudsIcon.addClass('show') :
         weatherData.includes('scattered clouds', 0) ? cloudsIcon.addClass('show') :
-        weatherData.includes('broken', 0) ? cloudsIcon.addClass('show') : clearIcon.removeClass('show');
+        weatherData.includes('broken', 0) ? cloudsIcon.addClass('show') : cloudsIcon.removeClass('show');
 
     weatherData.includes('shower', 0) ? showerRainIcon.addClass('show') : showerRainIcon.removeClass('show');
 
