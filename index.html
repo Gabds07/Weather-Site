@@ -9,21 +9,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body class="dark">
+
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
     <form class="form">
         <h2>View the weather conditions for your location:</h2>
         <input type="text" name="" class="input-location hide" placeholder="Type a location">
         <button class="submit-location">Check out</button>
+
         <p class="loading hide">Loading...</p>
         <p class="display-city"></p>
+
         <p class="icon-clear hide">☀️</p>
         <p class="icon-few-clouds hide">⛅</p>
         <p class="icon-scattered-clouds hide">☁️</p>
         <p class="icon-shower-rain hide">🌧️</p>
         <p class="icon-rain hide">🌦️</p>
         <p class="icon-thunderstorm hide">⛈️</p>
+
         <div class="weather-display"></div>
     </form>
+
     <script type="module" src="/src/main.ts"></script>
 </body>
 

@@ -1,6 +1,7 @@
 import getWeatherData from "./api/weatherApi";
 import IconsController from "./controllers/IconsController.ts";
 import getLocationData from "./api/locationApi.ts";
+import ThemeController from "./controllers/ThemeController.ts";
 
 function displayWeather() {
     const displayWeather = $('.weather-display') as JQuery;
@@ -25,4 +26,7 @@ function displayWeather() {
         loading.removeClass('show-loading');
     });
 }
+
+ThemeController();
+
 displayWeather();
